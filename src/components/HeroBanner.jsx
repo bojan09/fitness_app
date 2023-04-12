@@ -14,7 +14,7 @@ const HeroBanner = () => {
         position="relative"
         p="20px"
       >
-        <Typography color="#ff2625" fontWeight="600" fontSize="26px">
+        <Typography color="#3a86ff" fontWeight="600" fontSize="26px">
           Fitness Club
         </Typography>
 
@@ -33,9 +33,9 @@ const HeroBanner = () => {
           variant="contained"
           href="exercises"
           style={{
-            backgroundColor: "#ff2625",
+            backgroundColor: "#3a86ff",
             padding: "10px",
-            fontWeight: "500",
+            fontWeight: "600",
             textTransform: "capitalize",
           }}
         >
@@ -44,7 +44,7 @@ const HeroBanner = () => {
 
         <Typography
           fontWeight="600"
-          color="#ff2625 "
+          color="#3a86ff "
           sx={{ opacity: 0.1, display: { lg: "block", xs: "none" } }}
           fontSize="200px"
         >

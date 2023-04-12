@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // assets
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/gym.svg";
 
 // material ui components
 import { Stack } from "@mui/material";
@@ -21,7 +21,7 @@ const Navbar = () => {
       }}
       px="20px"
     >
-      <Link>
+      <Link to="/">
         <img
           src={Logo}
           alt="logo"
@@ -34,7 +34,7 @@ const Navbar = () => {
           style={{
             textDecoration: "none",
             color: "#3a1212",
-            borderBottom: "3px solid #ff2625",
+            borderBottom: "3px solid #3a86ff",
           }}
         >
           Home

@@ -26,14 +26,13 @@ const SearchExercises = () => {
               input: { fontWeight: "700", border: "none", borderRadius: "4px" },
               width: { lg: "800px", xs: "350px" },
               backgroundColor: "#ffffff",
-              borderRadius: "40px",
             }}
           ></TextField>
 
           <Button
             className="search-btn"
             sx={{
-              backgroundColor: "#ff2625",
+              backgroundColor: "#3a86ff",
               color: "#fff",
               textTransform: "none",
               width: { lg: "175px", xs: "80px" },
