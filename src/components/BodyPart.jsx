@@ -16,13 +16,11 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
           borderTop: bodyPart === item ? "4px solid #3a86ff" : "",
 
           backgroundColor: "#fff",
-          borderBottomLeftRadius: "20px",
-          width: "270px",
-          height: "280px",
+          borderRadius: "20px",
+          width: { ls: "270px", xs: "235px" },
+          height: { ls: "270px", xs: "250px" },
+          gap: { ls: "47", xs: "35px" },
           cursor: "pointer",
-          gap: "47px",
-
-          xs: { width: "50px", height: "60px" },
         }}
         onClick={() => {
           setBodyPart(item);
