@@ -25,6 +25,25 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     window.screenTo({ top: 1800, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    const fetchExercisesDate = async () => {
+      let exercisesData = [];
+      if (bodyPart === "all") {
+        exercisesData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises",
+          exercisesOptions
+        );
+      } else {
+        exercisesData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+          exercisesOptions
+        );
+      }
+      setExercises(exercisesData);
+    };
+    fetchExercisesDate();
+  }, [bodyPart]);
+
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography variant="h3" mb="46px">
