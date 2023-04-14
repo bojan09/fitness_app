@@ -22,13 +22,16 @@ const Navbar = () => {
       px="20px"
     >
       <Link to="/">
-        <img
-          src={Logo}
-          alt="logo"
-          style={{ width: "48px", height: "48px", margin: "0 20px" }}
-        />
+        <img src={Logo} alt="logo" style={{ width: "48px", height: "48px" }} />
       </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack
+        direction="row"
+        alignItems="flex-end"
+        sx={{
+          fontSize: { lg: "24px", xs: "20px" },
+          gap: { lg: "40px", xs: "22px" },
+        }}
+      >
         <Link
           to="/"
           style={{
@@ -45,6 +48,17 @@ const Navbar = () => {
         >
           Exercises
         </a>
+
+        <Link
+          to="/blog"
+          style={{
+            textDecoration: "none",
+            color: "#3a1212",
+            padding: "0 0 0 0",
+          }}
+        >
+          Blog
+        </Link>
       </Stack>
     </Stack>
   );
