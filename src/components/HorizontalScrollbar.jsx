@@ -35,16 +35,27 @@ const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => {
     },
   };
 
+  const CustomRightArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType },
+    } = rest;
+    // onMove means if dragging or swiping in progress.
+    return <button onClick={() => onClick()} />;
+  };
+
   return (
     <Carousel
+      CustomRightArrow={CustomRightArrow}
       swipeable={true}
       draggable={false}
       infinite={true}
       keyBoardControl={true}
-      customTransition="all .8"
+      customTransition="all 600ms ease-in-out"
       transitionDuration={500}
+      dotListClass="react-multi-carousel-dot-list"
       removeArrowOnDeviceType={["tablet", "mobile"]}
-      dotListClass="custom-dot-list-style"
+      renderDotsOutside={true}
       itemClass="carousel-item-padding-40-px"
       className="carousel"
       responsive={responsive}

@@ -16,7 +16,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
           borderTop: bodyPart === item ? "4px solid #3a86ff" : "",
 
           backgroundColor: "#fff",
-          borderRadius: "0 0 20px 20px",
+          borderRadius: "0 0 8px 8px",
           borderTop: { xs: "4px solid #3a86ff" },
           width: { ls: "270px", xs: "235px" },
           height: { ls: "270px", xs: "250px" },
