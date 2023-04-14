@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-// react-horizontal-scrolling-menu
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import "react-horizontal-scrolling-menu/dist/styles.css";
+// react-carousel
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 // mui components
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 // components
 import BodyPart from "./BodyPart";
@@ -14,39 +14,53 @@ import BodyPart from "./BodyPart";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
 
-const LeftArrow = () => {
-  const { scrollPrev } = useContext(VisibilityContext);
+const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 600 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 600, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
-    <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" />
-    </Typography>
+    <Carousel
+      swipeable={true}
+      draggable={false}
+      infinite={true}
+      keyBoardControl={true}
+      customTransition="all .8"
+      transitionDuration={500}
+      removeArrowOnDeviceType={["tablet", "mobile"]}
+      dotListClass="custom-dot-list-style"
+      itemClass="carousel-item-padding-40-px"
+      className="carousel"
+      responsive={responsive}
+    >
+      {data.map((item) => (
+        <Box
+          key={item.id || item}
+          itemID={item.id || item}
+          title={item.id || item}
+          m="0 40px"
+        >
+          <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
+        </Box>
+      ))}
+    </Carousel>
   );
 };
-
-const RightArrow = () => {
-  const { scrollNext } = useContext(VisibilityContext);
-
-  return (
-    <Typography onClick={() => scrollNext()} className="left-arrow">
-      <img src={RightArrowIcon} alt="right-arrow" />
-    </Typography>
-  );
-};
-
-const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => (
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-    {data.map((item) => (
-      <Box
-        key={item.id || item}
-        itemID={item.id || item}
-        title={item.id || item}
-        m="0 40px"
-      >
-        <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
-      </Box>
-    ))}
-  </ScrollMenu>
-);
 
 export default HorizontalScrollbar;

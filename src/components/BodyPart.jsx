@@ -21,6 +21,8 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
           height: "280px",
           cursor: "pointer",
           gap: "47px",
+
+          xs: { width: "50px", height: "60px" },
         }}
         onClick={() => {
           setBodyPart(item);
