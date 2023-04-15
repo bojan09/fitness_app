@@ -37,8 +37,11 @@ const Detail = ({ exerciseDetail }) => {
           {name}
         </Typography>
         <Typography variant="h6">
-          Exercises keeep you strong, {name} is one of the best exercise for
-          your {target}. It will help you improve your mood and gain energy.
+          Exercises keeep you strong,{" "}
+          <span style={{ textTransform: "capitalize" }}>{name}</span> is one of
+          the best exercise for your{" "}
+          <span style={{ textTransform: "capitalize" }}>{target}</span>. It will
+          help you improve your mood and gain energy.
         </Typography>
         {extraDetail.map((item) => (
           <Stack key={item.name} direction="row" gap="24px" alignItems="center">
