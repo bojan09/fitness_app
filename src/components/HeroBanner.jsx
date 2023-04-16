@@ -31,7 +31,7 @@ const HeroBanner = () => {
 
         <Button
           variant="contained"
-          href="exercises"
+          href="#exercises"
           style={{
             backgroundColor: "#3a86ff",
             padding: "10px",

@@ -10,10 +10,6 @@ import { Box } from "@mui/material";
 // components
 import BodyPart from "./BodyPart";
 
-// Arrow Icons
-import RightArrowIcon from "../assets/icons/right-arrow.png";
-import LeftArrowIcon from "../assets/icons/left-arrow.png";
-
 const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => {
   const responsive = {
     superLargeDesktop: {
