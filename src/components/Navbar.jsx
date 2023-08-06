@@ -49,6 +49,7 @@ const Navbar = () => {
           Exercises
         </a>
 
+        {/*
         <Link
           to="/blog"
           style={{
@@ -59,6 +60,7 @@ const Navbar = () => {
         >
           Blog
         </Link>
+        */}
       </Stack>
     </Stack>
   );
